@@ -119,6 +119,60 @@ const声明一个只读的常量。一旦声明，常量的值就不能改变。
     // foo = {}
 ```
 
+常量foo储存的是一个地址，这个地址指向一个对象。不可变的只是这个地址，即不能把foo指向另一个地址，但对象本身是可变的，所以依然可以为其添加新属性。
+
+冻结对象(也可以冻结属性)
+```
+    // 冻结对象
+    const foo = Object.freeze({});
+
+    // 常规模式时，下面一行不起作用；
+    // 严格模式时，该行会报错
+    foo.prop = 123;
+```
+
+#### ES6声明变量的6种方法
+var
+
+function
+
+let
+
+const
+
+import
+
+class
+
+
+## 顶层对象的属性
+顶层对象，在浏览器环境中，指的是window对象，
+在node中指的是global对象。
+
+顶层对象的属性与全局变量挂钩。顶层对象的属性是到处可以读写的，
+不利于模块化编程。
+
+ES6开始，var命令和function命令声明的变量是顶层对象的属性，
+let命令，const命令，class命令声明的全局变量，不属于顶层对象的属性。
+
+```$xslt
+var a = 1;
+// 如果在 Node 的 REPL 环境，可以写成 global.a
+// 或者采用通用方法，写成 this.a
+window.a // 1
+
+let b = 1;
+window.b // undefined
+```
+
+
+
+
+
+
+
+>https://es6.ruanyifeng.com/#docs/let
+
 
 
 
