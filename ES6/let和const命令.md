@@ -165,8 +165,27 @@ let b = 1;
 window.b // undefined
 ```
 
+取顶层对象的方法
 
+```$xslt
+// 方法一
+(typeof window !== 'undefined'
+   ? window
+   : (typeof process === 'object' &&
+      typeof require === 'function' &&
+      typeof global === 'object')
+     ? global
+     : this);
 
+var getGlobal = function () {
+  if (typeof self !== 'undefined') { return self; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  throw new Error('unable to locate global object');
+};
+```
+
+es2020中引入 globalthis作为顶层对象，任何环境都可以通过他拿到顶层对象
 
 
 

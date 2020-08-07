@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let [head, ...tail] = [1, 2, 3, 4];
+    console.log(tail);//[2, 3, 4]
+
+    let [x, y, ...z] = ['a'];
+    console.log(x); // 'a'
+    console.log(y); // undefined
+    console.log(z); // []
+
+    // let foo = [];
+    // console.log(foo);   // []
+
+    let [bar, foo] = [1];
+    console.log(foo);   // undefined
+
+    let [i, j] = new Set(['a', 'b']);
+    console.log(i) // "a"
+
+    let [var1, var2="b", var3="c"] = ["a", undefined, null];
+    console.log(var2);  // "b"
+    console.log(var3);  // null
+
+    let [a1=1, a2=a1] = ["xx"];
+    console.log(a1);    //"xx"
+    console.log(a2);    //"xx"
+
+    // 对象的解构赋值
+    let {obj1, obj2} = {obj1: "被子", obj2: "照片"};
+    console.log(obj1);
+    console.log(obj2);
+
+    let {log, sin, cos} = Math;
+    const PI = Math.PI;
+    console.log(sin(PI/2)); // sin括号里面的是弧度值而不是角度值
+</script>
+</body>
+</html>

@@ -22,11 +22,20 @@
 
 
     // 冻结对象
-    const foo = Object.freeze({});
+    const foo1 = Object.freeze({});
 
     // 常规模式时，下面一行不起作用；
     // 严格模式时，该行会报错
-    foo.prop = 123;
+    foo1.prop = 123;
+
+    console.log(this);
+
+    if(true) {
+        let a = 5;
+        console.log(this);
+    }
+
+    // console.log(globa)
 </script>
 </body>
 </html>
