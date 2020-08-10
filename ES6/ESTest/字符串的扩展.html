@@ -9,6 +9,9 @@
 </head>
 <body>
 <div class="result"></div>
+<div id="list"></div>
+<div class="aa"></div>
+<div class="bb"></div>
 <script src="../js/jquery-3.3.1.js"></script>
 <script>
 
@@ -20,8 +23,43 @@
     // 模板字符串
     const result = 6;
     $(".result").append(
-        `There are ${result} fruits are on sale`
+        `There are ${result} fruits
+         are on sale`
     )
+
+    $('#list').html(`
+        <ul>
+          <li>first</li>
+          <li>second</li>
+        </ul>
+    `.trim());
+
+    function fn() {
+        return 'hello word';
+    }
+
+    $(".aa").append(
+        `你好，${fn()}`
+    );
+
+    $(".bb").append(
+        `你好啊，${'世界'}`
+    )
+
+    const data = [
+        { first: '<Jane>', last: 'Bond' },
+        { first: 'Lars', last: '<Croft>' },
+    ];
+    const tmpl = addrs => `
+      <table>
+      ${addrs.map(addr => `
+        <tr><td>${addr.first}</td></tr>
+        <tr><td>${addr.last}</td></tr>
+      `).join('')}
+      </table>
+    `;
+
+    console.log(tmpl(data));
 </script>
 </body>
 </html>
