@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // some() 方法 只要一个成员的返回值是true，则整个some方法的返回值就是true，否则返回false。
+    var arr = [1, 2, 3, 4, 5];
+    var aa = arr.some(function (elem) {
+        return elem >= 3;
+    });
+    console.log(aa);  // true
+
+    // includes() 方法用来判断一个数组是否包含一个指定的值，如果是返回 true，否则false
+    console.log([1, 2, 3].includes(2)); // true
+    console.log([1, 2, 3].includes(2, 1));  // true
+    console.log([1, 2, 3].includes(2, -4)); // true，-4大于arr的长度3，所以index从0开始
+
+    // every方法是所有成员的返回值都是true，整个every方法才返回true，否则返回false。
+    var bb = arr.every(function (elem) {
+        return elem >= 3;
+    });
+    console.log(bb);
+
+    var cc = arr.filter(function (age) {
+        return age >= 3;
+    });
+    console.log(cc);
+</script>
+</body>
+</html>
